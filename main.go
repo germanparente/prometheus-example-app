@@ -35,6 +35,9 @@ var (
 
 func main() {
 	version.Set(1)
+	httpRequestsTotal.WithLabelValues("200", "GET")
+	httpRequestDuration.WithLabelValues("200","found", "GET")
+
 	bind := ""
 	enableH2c := false
 	flagset := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
